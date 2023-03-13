@@ -7,6 +7,9 @@ import ProductCard from "./ProductCard";
 import { addToCart } from "../../redux/cartSlice";
 import { CartLink } from "../cart/CartLink";
 
+
+
+
 interface Props {
   onNavigateToCart: () => void;
 }
@@ -18,8 +21,8 @@ export function ProductsView({ onNavigateToCart }: Props) {
   const handleAddToCart = (product: Product) => {
     dispatch(addToCart(product.id));
   };
-
-  useEffect(() => {
+// performance  [{ "id" : "1" }] []
+   useEffect(() => {
     const getData = async () => {
       getProducts().then((products) => {
         dispatch(receivedProducts(products));
@@ -42,7 +45,7 @@ export function ProductsView({ onNavigateToCart }: Props) {
         <CartLink onNavigateToCart={onNavigateToCart} />
       </View>
       <FlatList
-        data={products}
+        data={products} //  for  ( item in  products)
         renderItem={({ item }) => (
           <ProductCard productData={item} onAddToCart={handleAddToCart} />
         )}

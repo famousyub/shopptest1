@@ -6,6 +6,7 @@ interface Props {
   onAddToCart: (product: Product) => void;
 }
 
+
 const ProductCard = ({ productData, onAddToCart }: Props) => {
   const handleAddToCart = () => {
     onAddToCart(productData);
@@ -19,6 +20,7 @@ const ProductCard = ({ productData, onAddToCart }: Props) => {
       <View style={styles.contentContainer}>
         <Text style={styles.name}>{productData?.name}</Text>
         <Text style={styles.price}>${productData?.price}</Text>
+        <Text style={styles.name}>{productData?.description}</Text>
       </View>
 
       <View style={styles.buttonContainer}>

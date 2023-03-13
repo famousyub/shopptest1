@@ -17,6 +17,12 @@ export const RootNavigator = () => {
           component={AppBottomTabNavigator}
         />
         <Stack.Screen name="CartScreen" component={CartScreen} />
+
+        <Stack.Screen
+          name="AppBottomTabNavigator1"
+          component={AppBottomTabNavigator}
+        />
+        <Stack.Screen name="CartScreen1" component={CartScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
